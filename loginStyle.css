@@ -1,0 +1,141 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: rgb(29, 31, 36);
+}
+
+#login {
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+#title__bar {
+    width: 100%;
+    height: 30px;
+    background: rgb(29, 31, 36);
+}
+
+#login input[type=text] {
+    width: 75%;
+    padding-left: 10px;
+    margin: 5px 10px 15px 30px;
+    border: none;
+    background: #2A2D34;
+    color: rgb(238, 238, 238);
+    font-size: 16px;
+    border-radius: 3px;
+    outline: none;
+    transition: 0.2s;
+    height: 35px;
+}
+
+#login input[type=text]:hover {
+    opacity: 0.8;
+    /* margin: 5px 0 15px 0;
+    width: calc(100% - 10px);
+    border-radius: 0; */
+}
+
+#login input[type=text]:focus {
+    opacity: 0.8;
+    margin: 5px 0 15px 0;
+    width: calc(100% - 10px);
+    border-radius: 0;
+}
+
+#login input[type=password] {
+    padding-left: 10px;
+    margin: 5px 10px 15px 30px;
+    border: none;
+    background: #2A2D34;
+    color: rgb(238, 238, 238);
+    font-size: 16px;
+    border-radius: 3px;
+    outline: none;
+    transition: 0.2s;
+    width: 75%;
+    height: 35px;
+}
+
+#login input[type=password]:hover {
+    opacity: 0.8;
+    /* margin: 5px 0 15px 0;
+    width: calc(100% - 10px);
+    border-radius: 0; */
+}
+
+#login input[type=password]:focus {
+    opacity: 0.8;
+    margin: 5px 0 15px 0;
+    width: calc(100% - 10px);
+    border-radius: 0;
+}
+
+#login__btn {
+    width: 120px;
+    margin: 5px 10px 15px 83px;
+    outline: none;
+    border: none;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+#login__btn:hover {
+    opacity: 0.8;
+}
+
+#login__btn:focus {
+    opacity: 0.6;
+}
+
+#login__title {
+    font-size: 40px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 90px;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: default;
+}
+
+#login__newmember {
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+    margin-left: 87px;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+#close__btn {
+    height: 100%;
+    width: 32px;
+    float: right;
+    background: rgb(29, 31, 36);
+    border: none;
+    color: rgb(81, 89, 104);
+    font-weight: bolder;
+    outline: none;
+    transition: 0.2s;
+    font-size: 14px;
+    border-bottom-left-radius: 50%;
+}
+
+#close__btn:hover {
+    color: white;
+    background: rgb(185, 39, 39);
+    cursor: pointer;
+}
+
+#close__btn:focus {
+    color: white;
+    background: rgb(129, 27, 27);
+}
+
+#new__account {
+    display: none;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body> <!-- onmousedown="return false" onselectstart="return false" -->
+  <h1 id="userNumber"></h1>
+  <script>
+    const customTitlebar = require('custom-electron-titlebar');
+
+    let MyTitleBar = new customTitlebar.Titlebar({
+      backgroundColor: customTitlebar.Color.fromHex('#2A2D34'),
+      shadow: false,
+      // icon: './icon.svg',
+      icon: null,
+      menu: false,
+      titleHorizontalAlignment: 'left'
+    });
+
+    MyTitleBar.updateTitle('');
+
+  </script>
+  <div class="title__bar">
+  </div>
+  <div id="mattr">
+    <nav class="teams" onmousedown="return false" onselectstart="return false">
+      <ul id="teams__list">
+      </ul>
+      <ul class="add__btn__list">
+        <li id="add__item">
+          <button id="add__btn">
+            +
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <nav id="sidebar" onmousedown="return false" onselectstart="return false">
+      <div class="sidebar__menubar">
+        <h4 id="sidebar__menubar--text">Channel Name</h4>
+        <button type="button" id="main__home__btn">
+          <!-- &#x2302 -->
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="sidebar__scroll">
+        <ul id="sidebar__list">
+        </ul>
+      </div>
+      <!-- <div id="add__button">
+        <h4 class="add__button--text">ADD</h4>
+      </div>   -->
+      <!-- FORMER SCRIPT PLACEHOLDER -->
+    </nav>
+    
+    <div id="main">
+      <div id="new__note__popup">
+        <div class="new__note__popup--item text__note__btn">
+          Text Note
+        </div>
+        <div class="new__note__popup--item todo__note__btn">
+          To-Do Note
+        </div>
+      </div>
+      <div class="main__menubar" onmousedown="return false" onselectstart="return false">
+        <div id="main__note--title">
+          <button id="new__note__save__btn">
+            Save
+          </button>
+          <button id="new__note__cancel__btn">
+            Cancel
+          </button>
+          <button id="editing__done__btn">
+            Save
+          </button>
+          <button id="editing__cancel__btn">
+            Cancel
+          </button>
+        </div>
+        <button id = "delete__note__button">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+        <button id = "edit__note__button">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
+        <button id = "info__note__button">
+          <i class="fa fa-info" aria-hidden="true"></i>
+        </button>
+        <button id="new__note__button">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> <span>New Note</span>
+        </button>
+      </div>
+      <div id="main__container">
+        <div id="main__note__data">
+          <input type="text" id="main__title" readonly>
+          <textarea id="main__content" cols="30" rows="10" readonly></textarea>
+        </div>
+        <div id="todo__note__data">
+          <input type="text" id="todo__title" readonly>
+          <div id="todo_list_area">
+            
+          </div>
+        </div>
+        <div id="main__note__info" onmousedown="return false" onselectstart="return false">
+          <div id="main__note__info__title">
+            Information
+          </div>
+          <div id="main__note__info__modification">
+            Last Modification:
+          </div>
+          <div id="main__note__info__date">
+            19:24 12-02-2020
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="home__screen">
+      <h1 id="home__heading"></h1>
+      <h1 id="home__time"></h1>
+      <h1 id="home__date"></h1>
+      <!-- <div id="footer">
+        <div id="username">
+          z3ven
+        </div>
+      </div> -->
+      <div id="settings__popup">
+        <div class="settings__popup--item dark__mode__switch__btn">
+          Dark mode
+        </div>
+        <div class="settings__popup--item change__password__btn">
+          Change Password
+        </div>
+        <div class="settings__popup--item log__out__btn">
+          Log Out
+        </div>
+      </div>
+      <div id="footer">
+        <button id="username"><i class="fa fa-cog" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATTR ENDS -->
+
+  </div>
+  <div id="newChPopup">
+    <div class="form__popup__ch" id="popupForm">
+      <button type="button" class="ch__btn__close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+      <form class="form__container__ch">
+        <input type="text" id="email" placeholder="Channel Name" name="channelName" id="ch__name__field" required>
+        Choose Theme
+        <div id="new__ch__theme">
+          <button type="button" class="theme__item" style="background: #1abc9c" name="1abc9c" id="1F47B">&#x1F47B</button>
+          <button type="button" class="theme__item" style="background: #2ecc71" name="2ecc71" id="1F47D">&#x1F47D</button>
+          <button type="button" class="theme__item" style="background: #f1c40f" name="f1c40f" id="1F525">&#x1F525</button>  
+          <button type="button" class="theme__item" style="background: #9b59b6" name="9b59b6" id="1F916">&#x1F916</button>
+          <button type="button" class="theme__item" style="background: #e74c3c" name="e74c3c" id="1F3B8">&#x1F3B8</button>
+          <button type="button" class="theme__item" style="background: #34495e" name="34495e" id="1F4A1">&#x1F4A1</button>  
+          <button type="button" class="theme__item" style="background: #3498db" name="3498db" id="2712">&#x2712</button>
+          <button type="button" class="theme__item" style="background: #e67e22" name="e67e22" id="1F4A9">&#x1F4A9</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="changePasswordPopup">
+    <div class="form__popup__pass" id="passForm">
+      <button type="button" class="pass__btn__close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+      <form class="form__container__pass">
+        <input type="password" placeholder="Current Password" name="channelName" id="curr__pass__field" required>
+        <input type="password" placeholder="New Password" name="channelName" id="new__pass__field" required>
+        <input type="password" placeholder="Confirm Password" name="channelName" id="new__confirm__field" required>        
+        <button id="change__pass__btn">Change Password</button>
+      </form>
+    </div>
+  </div>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="./script.js"></script>
+</body>
+</html>
