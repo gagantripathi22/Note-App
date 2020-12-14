@@ -23,14 +23,6 @@ var database = firebase.database();
 
 var rootRef = firebase.database().ref();
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'notedata'
-});
-
 var window = remote.getCurrentWindow();
 
 document.getElementById("close__btn").addEventListener("click", function (e) {
@@ -82,7 +74,7 @@ document.getElementById("login__btn").addEventListener("click", function (e) {
           mainWin.webContents.send('userid', Data);
           window.close();
         });
-        mainWin.webContents.openDevTools();
+        // mainWin.webContents.openDevTools();
 
         mainWin.on('close', () => {
           mainWin = null;

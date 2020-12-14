@@ -632,6 +632,9 @@ ipc.on('userid', (event, arg) => {
     //   NoteDeleteSnapshot.child('note/' + userid + '' + curr_channel_id + '/' + curr_note_id).delete();
     // });
 
+    $('#' + curr_channel_id).find(".teams__button").css({ "width": "100%", "border-radius": "0" });
+    $('#' + curr_channel_id).css({ "width": "100%" });
+
     document.getElementById("main__title").val = "";
     document.getElementById("main__content").val = "";
     loadNotes();
@@ -900,7 +903,8 @@ ipc.on('userid', (event, arg) => {
     newnote_click_counts += 1;
     info_click_counts = 0;
     if (newnote_click_counts % 2 !== 0) {
-      $('#new__note__popup').css("display", "block");
+      // $('#new__note__popup').css("display", "block");
+      textNoteWindowAppear();
       $('#main__note__info').css("display", "none");
       $('#main__container').css("display", "grid");
       $('#main__container').css("grid-template-columns", "1fr");

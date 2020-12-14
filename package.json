@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "electron": "electron ."
+    
+    "start": "electron ."
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
   },
   "dependencies": {
     "custom-electron-titlebar": "^3.2.2-hotfix62",
+    "electron-packager": "^15.2.0",
     "firebase": "^8.1.2",
     "jquery": "^3.4.1"
   }

@@ -70,63 +70,49 @@ document.getElementById("login__btn").addEventListener("click", function (e) {
   if (username != "" && password != "" && email != "" && mobilenumber != "") {
     // $sql = "insert into useraccounts(username, password, email, mobilenumber) ";
     // $sql += "values('" + username + "','" + password + "','" + email + "','" + mobilenumber + "')";
-
-
     var oldAccCount;
+
     rootRef.on('value', function (ChSnapshot) {
-      oldAccCount = ChSnapshot.child('useraccounts').numChildren();
-    });
-    if (oldAccCount != null) {
-      oldAccCount = Number(oldAccCount) + 1;
-    }
-    else {
-      oldAccCount = 1;
-    }
-    console.log('ACC NUM CT' + oldAccCount);
-    var newAccRef = firebase.database().ref().child('useraccounts/' + oldAccCount);
-    newAccRef.set({
-      username: username,
-      password: password,
-    })
-
-
-
-    // var newAccWin = remote.getCurrentWindow();
-    // let mainWin = new BrowserWindow({
-    //   width: 297, height: 370, frame: false, webPreferences: {
-    //     nodeIntegration: true
-    //   }
-    // });
-    // // mainWin.webContents.on('did-finish-load', () => {
-
-    // // });
-    // newAccWin.close();
-    // // mainWin.webContents.openDevTools();
-
-    // mainWin.on('close', () => {
-    //   mainWin = null;
-    // });
-    // mainWin.show();
-    // mainWin.loadURL(path.join('file://', process.cwd(), 'login.html'));
-
-
-    var newAccWin = remote.getCurrentWindow();
-    let mainWin = new BrowserWindow({
-      width: 297, height: 370, frame: false, webPreferences: {
-        nodeIntegration: true
+      async function callHim() {
+        oldAccCount = await ChSnapshot.child('useraccounts/').numChildren();
+        console.log('childrem : ' + ChSnapshot.child('useraccounts/').numChildren());
       }
+      callHim();
     });
-    mainWin.webContents.on('did-finish-load', () => {
-      newAccWin.close();
-    });
-    // mainWin.webContents.openDevTools();
 
-    mainWin.on('close', () => {
-      mainWin = null;
-    });
-    mainWin.show();
-    mainWin.loadURL(path.join('file://', process.cwd(), 'login.html'));
+    console.log('ACC NUM CT' + oldAccCount);
+    setTimeout(function () {
+      var newAccRef = firebase.database().ref().child('useraccounts/' + oldAccCount);
+      newAccRef.set({
+        username: username,
+        password: password,
+      })
 
+
+      var newAccWin = remote.getCurrentWindow();
+      let mainWin = new BrowserWindow({
+        width: 297, height: 370, frame: false, webPreferences: {
+          nodeIntegration: true
+        }
+      });
+      mainWin.webContents.on('did-finish-load', () => {
+        newAccWin.close();
+      });
+      // mainWin.webContents.openDevTools();
+
+      mainWin.on('close', () => {
+        mainWin = null;
+      });
+      mainWin.show();
+      mainWin.loadURL(path.join('file://', process.cwd(), 'login.html'));
+
+
+    }, 3000);
+
+
+    // if (oldAccCount == null) {
+    //   oldAccCount = 1;
+    // }
 
 
 
